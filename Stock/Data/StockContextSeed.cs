@@ -43,7 +43,7 @@ public class StockContextSeed
                 Id = "602d2149e773f2a3990b47f9",
                 ProductId = "602d2149e773f2a3990b47f9",
                 Quantity = 87
-            },
+            }
         };
     }
 }

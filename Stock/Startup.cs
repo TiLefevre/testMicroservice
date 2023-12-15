@@ -29,7 +29,7 @@ public class Startup
             
             config.UsingRabbitMq((ctx, cfg) =>
             {
-                cfg.Host("amqp://guest:guest@localhost:5672");
+                cfg.Host("amqp://guest:guest@rabbitmq:5672");
                 
                 cfg.ReceiveEndpoint("product-queue", c =>
                 {
@@ -53,7 +53,6 @@ public class Startup
         
 
         app.UseRouting();
-        Console.WriteLine("test");
         app.UseAuthorization();
 
         app.UseEndpoints(endpoints => { endpoints.MapControllers(); });

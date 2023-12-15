@@ -30,7 +30,7 @@ public class Startup
         {
             config.UsingRabbitMq((ctx, cfg) =>
             {
-                cfg.Host("amqp://guest:guest@localhost:5672");
+                cfg.Host("amqp://guest:guest@rabbitmq:5672");
             });
         });
         services.AddMassTransitHostedService();
