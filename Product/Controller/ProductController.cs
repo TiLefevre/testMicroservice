@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using Product.Repositories.Interfaces;
 
@@ -8,11 +9,13 @@ public class ProductController : ControllerBase
 {
     private readonly ILogger<ProductController> _logger;
     private readonly IProductRepository _repository;
+    private readonly IPublishEndpoint _publishEndpoint;
 
-    public ProductController(IProductRepository repository, ILogger<ProductController> logger)
+    public ProductController(IProductRepository repository, ILogger<ProductController> logger, IPublishEndpoint publishEndpoint)
     {
         _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        _publishEndpoint = publishEndpoint ?? throw new ArgumentNullException(nameof(publishEndpoint));
     }
 
     [HttpGet("products", Name = "GetProducts")]
@@ -60,6 +63,7 @@ public class ProductController : ControllerBase
     public async Task<ActionResult<Entities.Product>> CreateProduct([FromBody] Entities.Product product)
     {
         await _repository.CreateProduct(product);
+        await _publishEndpoint.Publish(product);
         return CreatedAtRoute("GetProduct", new { id = product.Id }, product);
     }
 

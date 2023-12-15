@@ -12,16 +12,16 @@ services:
     networks:
         productnet:
 
-  shoppingcartdb:
-    container_name: shoppingcartdb
+  stockdb:
+    container_name: stockdb
     command: mongod --port 27018
     ports:
       - "27018:27018"
     restart: always
     volumes:
       - mongo_data:/data/db2
-    networks: 
-      shoppingcartnet:
+    networks:
+      stocknet:
   
   rabbitmq:
     container_name: rabbitmq
@@ -43,21 +43,21 @@ services:
     networks:
         productnet:
 
-  shoppingcart:
-    container_name: shoppingcart
+  stock:
+    container_name: stock
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - "DatabaseSettings:ConnectionString=mongodb://shoppingcartdb:27018"
+      - "DatabaseSettings:ConnectionString=mongodb://stockdb:27018"
     depends_on:
-      - shoppingcartdb
+      - stockdb
     ports:
       - "8001:80"
     networks:
-      shoppingcartnet:
+      stocknet:
 
         
 networks:
-  shoppingcartnet:
+  stocknet:
   productnet:  
   
     

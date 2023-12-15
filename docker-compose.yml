@@ -17,11 +17,11 @@ services:
       context: .
       dockerfile: Product/Dockerfile
       
-  shoppingcart:
-    image: ${DOCKER_REGISTRY-}shoppingcart
+  stock:
+    image: ${DOCKER_REGISTRY-}stock
     build:
       context: .
-      dockerfile: ShoppingCart/Dockerfile
+      dockerfile: Stock/Dockerfile
 
 volumes:
   mongo_data:

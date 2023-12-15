@@ -48,3 +48,4 @@ C:\Users\tilef\RiderProjects\testMicroservice\Product\bin\Debug\net8.0\MassTrans
 C:\Users\tilef\RiderProjects\testMicroservice\Product\bin\Debug\net8.0\MassTransit.Abstractions.dll
 C:\Users\tilef\RiderProjects\testMicroservice\Product\bin\Debug\net8.0\MassTransit.RabbitMqTransport.dll
 C:\Users\tilef\RiderProjects\testMicroservice\Product\bin\Debug\net8.0\RabbitMQ.Client.dll
+C:\Users\tilef\RiderProjects\testMicroservice\Product\obj\Debug\net8.0\Product.sourcelink.json

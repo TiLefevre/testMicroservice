@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BoRmcMJshND1kBo1VMFnsT88xRPN70NDE0PwBn5gxJtKK75ZjLx++fRYZNXp6SsmHQ7P64ToWq7ygVTAKIXXBg==",
+  "dgSpecHash": "1jlY+Rq2CCF4JOnB3wJLexPhybREETU76hn1EWrVhDUlpeqnwm3LAOUa3XK4OYtkVZvE090EQBR2SjZMTEAFYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tilef\\RiderProjects\\testMicroservice\\ShoppingCart\\ShoppingCart.csproj",
+  "projectFilePath": "C:\\Users\\tilef\\RiderProjects\\testMicroservice\\Stock\\Stock.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tilef\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\tilef\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
