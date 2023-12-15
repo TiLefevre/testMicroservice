@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  productdb:
+    image: mongo
+    
+  shoppingcartdb:
+    image: mongo
+
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+
+  product:
+    image: ${DOCKER_REGISTRY-}product
+    build:
+      context: .
+      dockerfile: Product/Dockerfile
+      
+  shoppingcart:
+    image: ${DOCKER_REGISTRY-}shoppingcart
+    build:
+      context: .
+      dockerfile: ShoppingCart/Dockerfile
+
+volumes:
+  mongo_data:
+  

@@ -1,0 +1,65 @@
+version: '3.4'
+
+services:
+  productdb:
+    container_name: productdb
+    command: mongod --port 27017
+    ports:
+      - "27017:27017"
+    restart: always
+    volumes:
+      - mongo_data:/data/db1
+    networks:
+        productnet:
+
+  shoppingcartdb:
+    container_name: shoppingcartdb
+    command: mongod --port 27018
+    ports:
+      - "27018:27018"
+    restart: always
+    volumes:
+      - mongo_data:/data/db2
+    networks: 
+      shoppingcartnet:
+  
+  rabbitmq:
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+    restart: always
+    
+  product:
+    container_name: product
+    ports:
+      - "8000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "DatabaseSettings:ConnectionString=mongodb://productdb:27017"
+    depends_on:
+      - productdb
+    networks:
+        productnet:
+
+  shoppingcart:
+    container_name: shoppingcart
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "DatabaseSettings:ConnectionString=mongodb://shoppingcartdb:27018"
+    depends_on:
+      - shoppingcartdb
+    ports:
+      - "8001:80"
+    networks:
+      shoppingcartnet:
+
+        
+networks:
+  shoppingcartnet:
+  productnet:  
+  
+    
+
+ 

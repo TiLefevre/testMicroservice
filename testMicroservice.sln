@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0F2EE38B-61B6-4626-A205-AC068FA22485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product", "Product\Product.csproj", "{D8297730-7CA5-4E31-9B79-9F43C2036813}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCart", "ShoppingCart\ShoppingCart.csproj", "{81359E36-B7DC-452C-AB18-540D79DD6E18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authentification", "Authentification\Authentification.csproj", "{EA368520-7F4F-4EE6-A07F-B6DDE2B1DE30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D8297730-7CA5-4E31-9B79-9F43C2036813} = {0F2EE38B-61B6-4626-A205-AC068FA22485}
+		{81359E36-B7DC-452C-AB18-540D79DD6E18} = {0F2EE38B-61B6-4626-A205-AC068FA22485}
+		{EA368520-7F4F-4EE6-A07F-B6DDE2B1DE30} = {0F2EE38B-61B6-4626-A205-AC068FA22485}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8297730-7CA5-4E31-9B79-9F43C2036813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8297730-7CA5-4E31-9B79-9F43C2036813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8297730-7CA5-4E31-9B79-9F43C2036813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8297730-7CA5-4E31-9B79-9F43C2036813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81359E36-B7DC-452C-AB18-540D79DD6E18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81359E36-B7DC-452C-AB18-540D79DD6E18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81359E36-B7DC-452C-AB18-540D79DD6E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81359E36-B7DC-452C-AB18-540D79DD6E18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA368520-7F4F-4EE6-A07F-B6DDE2B1DE30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA368520-7F4F-4EE6-A07F-B6DDE2B1DE30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA368520-7F4F-4EE6-A07F-B6DDE2B1DE30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA368520-7F4F-4EE6-A07F-B6DDE2B1DE30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
