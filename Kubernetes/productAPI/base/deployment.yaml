@@ -22,7 +22,7 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   key: ASPNETCORE_ENVIRONMENT
-                  name: productAPI
+                  name: productapi
             - name: DatabaseSettings:ConnectionString
               value: mongodb://productdb:27017
           image: product
