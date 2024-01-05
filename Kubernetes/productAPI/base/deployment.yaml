@@ -25,7 +25,7 @@ spec:
                   name: productapi
             - name: DatabaseSettings__ConnectionString
               value: "mongodb://productdb:27017"
-          image: product
+          image: timothelfvr/product:latest
           name: product
           ports:
             - containerPort: 8080
