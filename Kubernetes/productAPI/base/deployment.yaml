@@ -23,7 +23,7 @@ spec:
                 configMapKeyRef:
                   key: ASPNETCORE_ENVIRONMENT
                   name: productapi
-            - name: DatabaseSettings:ConnectionString
+            - name: DatabaseSettings__ConnectionString
               value: "mongodb://productdb:27017"
           image: product
           name: product
