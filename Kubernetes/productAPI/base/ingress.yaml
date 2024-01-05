@@ -1,16 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: stockAPI
+  name: productAPI
 spec:
   ingressClassName: nginx
   rules:
     - http:
         paths:
-          - path: /api/Stock/
+          - path: /api/Product/
             pathType: Prefix
             backend:
               service:
-                name: ServiceTitle
+                name: productAPI
                 port:
-                  number: 8001
+                  number: 8000
