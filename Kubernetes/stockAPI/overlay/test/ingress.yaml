@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: "app14.mfolabs.me"
+    - host: "test-app14.mfolabs.me"
       http:
         paths:
           - path: /api/Stock/

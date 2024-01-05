@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - ../../base
 patchesStrategicMerge:
-  - providerclass.yaml
+  - configmap.yaml
+  - ingress.yaml
