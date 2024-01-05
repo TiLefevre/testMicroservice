@@ -27,7 +27,10 @@ spec:
       containers:
         - env:
             - name: ASPNETCORE_ENVIRONMENT
-              value: Development
+              valueFrom:
+                configMapKeyRef:
+                  key: ASPNETCORE_ENVIRONMENT
+                  name: stockAPI
             - name: DatabaseSettings:ConnectionString
               value: mongodb://stockdb:27018
           image: stock
