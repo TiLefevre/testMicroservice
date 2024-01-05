@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: mongo-data
+  name: mongo-data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 8Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: stockdb
+  name: stockdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: stockdb
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.network/testmicroservice-main: "true"
+        io.kompose.service: stockdb
+    spec:
+      containers:
+        - args:
+            - mongod
+            - --port
+            - "27018"
+          image: mongo
+          name: stockdb
+          ports:
+            - containerPort: 27018
+              hostPort: 27018
+              protocol: TCP
+          resources: {}
+          volumeMounts:
+            - mountPath: /data/db2
+              name: mongo-data
+      restartPolicy: Always
+      volumes:
+        - name: mongo-data
+          persistentVolumeClaim:
+            claimName: mongo-data
+status: {}

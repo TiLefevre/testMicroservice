@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: productAPI
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: "app14.mfolabs.me"
+      http:
+        paths:
+          - path: /api/Product/
+            pathType: Prefix
+            backend:
+              service:
+                name: productAPI
+                port:
+                  number: 8000
