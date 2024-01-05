@@ -24,7 +24,7 @@ spec:
                   key: ASPNETCORE_ENVIRONMENT
                   name: productapi
             - name: DatabaseSettings:ConnectionString
-              value: mongodb://productdb:27017
+              value: "mongodb://productdb:27017"
           image: product
           name: product
           ports:
