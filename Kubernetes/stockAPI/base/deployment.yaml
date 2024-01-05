@@ -22,7 +22,7 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   key: ASPNETCORE_ENVIRONMENT
-                  name: stockAPI
+                  name: stockapi
             - name: DatabaseSettings__ConnectionString
               value: "mongodb://stockdb:27018"
           image: timothelfvr/stock:latest
